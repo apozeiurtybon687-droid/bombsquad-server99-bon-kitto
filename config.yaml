@@ -1,1 +1,12 @@
 
+party_name: "My 24/7 BombSquad Server"
+party_is_public: true
+party_code: "bsac-0bf1da7eab10cfaa3718bf29b8b695b7f91afc7146b4a8b2"
+session_type: "Free-for-All"
+max_party_size: 8
+
+# قائمة الـ Owner (ضع Account ID الخاص بك من اللعبة)
+owners:
+  - "a-c20109584"
+
+enable_chat_commands: true
