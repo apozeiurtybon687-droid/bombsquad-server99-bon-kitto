@@ -1,1 +1,6 @@
+services:
+  - type: web
+    name: bombsquad-server99-bon-kitto
+    env: docker
+    plan: free
 
