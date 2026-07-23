@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     libsdl2-2.0-0 \
     libopenal1 \
-    && rm -rf /var/lib/apt-get/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
@@ -22,5 +22,5 @@ RUN chmod +x bombsquad_server
 
 EXPOSE 43210/udp
 
-# أمر التشغيل المباشر للسيرفر
+# أمر تشغيل السيرفر المباشر بالمجلد الحالي
 CMD ["./bombsquad_server"]
