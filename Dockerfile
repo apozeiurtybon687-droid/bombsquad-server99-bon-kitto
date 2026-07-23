@@ -12,10 +12,12 @@ WORKDIR /app
 
 COPY . /app
 
-# البحث عن مجلد bacommon أينما كان ونسخه إلى مجلد التطبيق الرئيسي
-RUN if [ -d "/app/dist/bacommon" ]; then cp -r /app/dist/bacommon /app/; \
-    elif [ -d "/app/server-scripts-public-server/bacommon" ]; then cp -r /app/server-scripts-public-server/bacommon /app/; \
-    elif find /app -name "bacommon" -type d | grep -q .; then cp -r $(find /app -name "bacommon" -type d | head -n 1) /app/; fi
+# طباعة قائمة المجلدات الموجودة لمعرفة مكان bacommon بدقة، ثم نقله للجذر
+RUN echo "--- Searching for bacommon ---" && \
+    find /app -name "bacommon" && \
+    if [ -d "$(find /app -name "bacommon" -type d | head -n 1)" ]; then \
+        cp -r $(find /app -name "bacommon" -type d | head -n 1) /app/; \
+    fi
 
 ENV PYTHONPATH="/app"
 
