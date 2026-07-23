@@ -12,8 +12,7 @@ WORKDIR /app
 
 COPY . /app
 
-# إضافة مسار الحزم لكي يقرأ بايثون المكاتب بشكل صحيح
-ENV PYTHONPATH=/app
+ENV PYTHONPATH="/app:/app/dist:/app/server-scripts-public-server"
 
 RUN chmod +x bombsquad_server
 
